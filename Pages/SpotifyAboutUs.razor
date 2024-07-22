@@ -1,0 +1,25 @@
+@page "/aboutus"
+
+<div class="page spotify-aboutus main-layout">
+    <div class="left-panel">
+        <SpotifyPlayer />
+    </div>
+    <div class="divider-vertical"></div>
+    <div class="right-panel">
+        <AboutUs />
+    </div>
+</div>
+
+<style>
+    .main-layout {
+        display: flex;
+        align-items: center;
+    }
+
+    .left-panel, .right-panel {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+</style>

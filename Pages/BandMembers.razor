@@ -1,0 +1,55 @@
+@page "/band-members"
+
+<div class="main page band-members">
+    <h1 class="header">Meet The Band</h1>
+    <div class="gallery-container">
+        <div class="gallery-item">
+            <img class="artist-image" src="/img/Noah.jpg" />
+            <h2 class="artist-name">Noah Lehman</h2>
+            <h3 class="artist-job">Guitar &centerdot; Vocals</h3>
+        </div>
+        <div class="gallery-item">
+            <img class="artist-image" src="/img/Graham.jpg" />
+            <h2 class="artist-name">Graham Schoeneman</h2>
+            <h3 class="artist-job">Bass &centerdot; Vocals</h3>
+        </div>
+        <div class="gallery-item">
+            <img class="artist-image" src="/img/Keith.jpg" />
+            <h2 class="artist-name">Keith Schreiner</h2>
+            <h3 class="artist-job">Drums &centerdot; Percussion</h3>
+        </div>
+    </div>
+</div>
+
+<style>
+    .gallery-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .gallery-item {
+        text-align: center;
+        width: 23rem;
+        padding: .5rem;
+        color: rgb(255,255,255);
+    }
+
+    .artist-image {
+        width: 100%;
+        height: auto;
+        max-height: 85vh;
+        max-width: 60vh;
+        box-shadow: 4px 4px 8px #000;
+        border: 5px solid rgb(255,255,255);
+    }
+
+    .artist-name {
+        font-size: 2.5vw;
+    }
+
+    .artist-job {
+        font-size: 1.5vw;
+    }
+</style>

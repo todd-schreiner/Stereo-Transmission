@@ -1,0 +1,196 @@
+
+@page "/contactus"
+
+<div class="page contactus contatus-layout">
+<table>
+<tr>
+    <td><h3 class="contactUs-header">Contact Us</h3></td>
+</tr>
+<tr><td>
+    <div class="contact-form-container">
+        <div class="contact-form">
+            <EditForm Model="@contactModel" OnValidSubmit="HandleValidSubmit">
+                <DataAnnotationsValidator />
+                <ValidationSummary />
+
+                <div class="input-group">
+                    <label for="name">Name</label>
+                    <InputText id="name" @bind-Value="contactModel.Name" class="input-line"/>
+                </div>
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <InputText id="email" type="email" @bind-Value="contactModel.Email" class="input-line"/>
+                </div>
+                <div class="input-group">
+                    <label for="message">Message</label>
+                    <InputTextArea id="message" @bind-Value="contactModel.Message" class="input-line"/>
+                </div>
+                <button type="submit" class="submit-button">Contact Us</button>
+            </EditForm>
+        </div>
+        <div class="contact-details">
+            <table>
+                <tr>
+                    <td><strong>Contact</strong></td>
+                </tr>
+                <tr>
+                    <td class="contact-details-info"><a href="mailto:stereotransmission@gmail.com">stereotransmission@gmail.com</a></td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td><strong>Based In</strong></td>
+                </tr>
+                <tr>
+                    <td class="contact-details-info">Colorado</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.instagram.com/stereotransmission/" target="_blank" rel="noopener noreferrer"><img src="/img/instagram-white.png" alt="Instagram" width="50px"></a></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</td></tr>
+</table></div>
+
+@code {
+    private ContactModel contactModel = new ContactModel();
+
+    private void HandleValidSubmit()
+    {
+        // Handle the form submission
+        Console.WriteLine("Form submitted successfully!");
+        // You can add more logic here to process the form data, e.g., send it to a server.
+    }
+
+    public class ContactModel
+    {
+        public string Name { get; set; }
+        public string Email { get; set; }
+        public string Message { get; set; }
+    }
+}
+
+<style>
+    .contatus-layout {
+        display: grid;
+        padding: 0 3rem 3rem 12rem;
+        align-items: flex-end;
+    }
+
+    .contact-form-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        border: 5px solid rgb(255,255,255);
+        margin-left: 7rem;
+        background-color: #444;
+    }
+
+    .contact-form {
+        display: flex;
+        flex-direction: column;
+        max-width: 800px;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .contact-form h3 {
+        margin-bottom: 20px;
+    }
+
+    .contactUs-header {
+        font-family: 'Monoton';
+        font-size: 4vw;
+        text-align: left;
+        text-shadow: 2px 2px 4px #000;
+        color: rgb(255,255,255);
+    }
+
+    .input-group {
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .input-group label {
+        margin-bottom: 5px;
+        color: rgb(255,255,255);
+    }
+
+    .input-line {
+        border: none;
+        border-bottom: 2px solid rgb(255,255,255);
+        padding: 5px 0;
+        font-size: 16px;
+        width: 100%;
+        color: rgb(255,255,255);
+        background: rgba(255,255,255,0);
+    }
+
+    .input-line:focus {
+        outline: none;
+        border-bottom: 2px solid rgb(230,230,230);
+    }
+
+    .submit-button {
+        background-color: rgb(255,255,255);
+        color: rgb(0,0,0);
+        border: none;
+        border-radius: 30px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .submit-button:hover {
+        background-color: rgb(230,230,230);
+    }
+
+    .contact-details {
+        width: 20rem;
+        height: 100%;
+        align-items: center;
+        justify-content: right;
+        flex-direction: column;
+        padding-top: 20px;
+        padding-left: 10px;
+        color: rgb(255,255,255);
+    }
+
+    .contact-details table {
+        font-size: 16px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .contact-details td {
+        padding: 5px 10px;
+    }
+
+    .contact-details-info {
+        align-items: right;
+        justify-content: right;
+    }
+
+    a {
+        color: rgb(255,255,255);
+    }
+
+    a:hover {
+        color: rgb(220,220,220);
+    }
+</style>
