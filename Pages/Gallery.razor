@@ -41,7 +41,7 @@
         "/img/gallery/image16.jpg"
     };
 
-    private string SelectedImage { get; set; }
+    private string? SelectedImage { get; set; }
 
     protected override void OnInitialized()
     {
@@ -54,32 +54,36 @@
 
     private void PrevImage()
     {
-        string currentImg = SelectedImage.Replace("/img/gallery/image", "").Replace(".jpg", "");
-        int prevImg = Convert.ToInt32(currentImg) - 1;
+        if (SelectedImage != null){
+            string currentImg = SelectedImage.Replace("/img/gallery/image", "").Replace(".jpg", "");
+            int prevImg = Convert.ToInt32(currentImg) - 1;
 
-        Console.WriteLine(currentImg);
-        Console.WriteLine(prevImg);
+            //Console.WriteLine(currentImg);
+            //Console.WriteLine(prevImg);
 
-        if (prevImg < 1)
-            prevImg = Images.Count;
+            if (prevImg < 1)
+                prevImg = Images.Count;
 
-        Console.WriteLine(Images[prevImg - 1]);
-        SelectImage(Images[prevImg - 1]);
+            //Console.WriteLine(Images[prevImg - 1]);
+            SelectImage(Images[prevImg - 1]);
+        }
     }
 
     private void NextImage()
     {
-        string currentImg = SelectedImage.Replace("/img/gallery/image", "").Replace(".jpg", "");
-        int nextImg = Convert.ToInt32(currentImg) + 1;
+        if (SelectedImage != null){
+            string currentImg = SelectedImage.Replace("/img/gallery/image", "").Replace(".jpg", "");
+            int nextImg = Convert.ToInt32(currentImg) + 1;   
 
-        Console.WriteLine(currentImg);
-        Console.WriteLine(nextImg);
+            //Console.WriteLine(currentImg);
+            //Console.WriteLine(nextImg);
 
-        if (nextImg > Images.Count)
-            nextImg = 1;
+            if (nextImg > Images.Count)
+                nextImg = 1;
 
-        Console.WriteLine(Images[nextImg - 1]);
-        SelectedImage = Images[nextImg - 1];
+            //Console.WriteLine(Images[nextImg - 1]);
+            SelectedImage = Images[nextImg - 1];
+        }
     }
 }
 
