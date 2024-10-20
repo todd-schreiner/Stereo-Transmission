@@ -1,15 +1,15 @@
 {
   "mainAssemblyName": "Stereo Transmission",
   "resources": {
-    "hash": "sha256-IdlwLM7XpqQ5F/mmzgXKU5977n2xBIkbE7GeWUR2ePw=",
+    "hash": "sha256-Sf9/gAJiVakqDt+y1pPAbj7g16L20LPNPMffrGOwP9E=",
     "jsModuleNative": {
-      "dotnet.native.8.0.8.jsto1ebjts.js": "sha256-juC5sA7gHTLXFEhAKgdM2/RavswpwCtDfjYGsAz2FXg="
+      "dotnet.native.8.0.10.cay1rwv05v.js": "sha256-QVxMlY7ohmjgde/bZMA0dlWDAeuUP+tEfkiSdg4DFcE="
     },
     "jsModuleRuntime": {
-      "dotnet.runtime.8.0.8.od6h8ca49d.js": "sha256-0Dpj/NkVD5WqSC16ZvJLmlc38iv9+Je+umYBVOycPVU="
+      "dotnet.runtime.8.0.10.1v4nyb1010.js": "sha256-FjrgL9dY6dc2yUoXDWowSfachSgM8O29qUMWDQOJKRI="
     },
     "wasmNative": {
-      "dotnet.native.wasm": "sha256-OcUTcd7qQceenWEF93409WZcaXp2qQbEyhdchog4RUE="
+      "dotnet.native.wasm": "sha256-4ymhDbG5daKbi9yL1L574jRRiFFQhiOrDJU5YAYALU4="
     },
     "icu": {
       "icudt_CJK.dat": "sha256-SZLtQnRc0JkwqHab0VUVP7T3uBPSeYzxzDnpxPpUnHk=",
@@ -208,14 +208,14 @@
       "mscorlib.wasm": "sha256-Gz8PyW2/fwihe5ul81OwmRUrU71r+KtbyRw6xlOGD+Q=",
       "netstandard.wasm": "sha256-jMTqIQzoDS810lyhZpMO5eEC36EzntXqSVn+2qwkOMQ=",
       "System.Private.CoreLib.wasm": "sha256-NFj5WE5VLP2LptZIRJCUIc1AMk06FmxpsSILfPISwAw=",
-      "Stereo Transmission.wasm": "sha256-ETybOz/xPREgZzb3E+ApxJ+hxuJlu/VE2YT7k3qKzlc="
+      "Stereo Transmission.wasm": "sha256-wvnRkdGXyUNVkuV/KFS+IdczEBR4qgBuMEqA15SUXsI="
     },
     "pdb": {
-      "Stereo Transmission.pdb": "sha256-OTJzZHvIKqcxofubsmnWv5brTtPFFgGuQCIr/skp27k="
+      "Stereo Transmission.pdb": "sha256-WV3EFPd/bGkPalGTFN9/MvodbI4YcRiSOHSQl/P9fe4="
     }
   },
   "cacheBootResources": true,
-  "debugLevel": 0,
+  "debugLevel": -1,
   "globalizationMode": "sharded",
   "extensions": {
     "blazor": {}
