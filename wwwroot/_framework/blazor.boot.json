@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "Stereo Transmission",
   "resources": {
-    "hash": "sha256-L+6QNQpOMhMH/RUB1ZIJMPefyD1dNAZ9eqvuyR6sbnE=",
+    "hash": "sha256-lYMVZxIh6CX971AqSjJIi/9kD5nXhOlJNyY7hXpR0W4=",
     "jsModuleNative": {
       "dotnet.native.8.0.10.cay1rwv05v.js": "sha256-QVxMlY7ohmjgde/bZMA0dlWDAeuUP+tEfkiSdg4DFcE="
     },
@@ -208,10 +208,10 @@
       "mscorlib.wasm": "sha256-KvqZaNpjwhrOuzE4b4aMFsI+VUTyiWfoDI4zn4l9BM8=",
       "netstandard.wasm": "sha256-v+s7sWxtOM6bnOvC0jFrtnm6uMfbDymwl2nHNgbS2LM=",
       "System.Private.CoreLib.wasm": "sha256-pklll63uFQoY6vaD3vbluS9osYiJWLLLmob1yHFgepI=",
-      "Stereo Transmission.wasm": "sha256-kM8FKLM7MLdUSZQ9YbWgOhENUJu/pGJSKbpfQqBgx6M="
+      "Stereo Transmission.wasm": "sha256-7DjjlKvmmSLO3soWdWXms7pm/0eAvKuZoLqGFy8T5o8="
     },
     "pdb": {
-      "Stereo Transmission.pdb": "sha256-PGUv2p8LIZ4XSjYl6jYIGz2my5MRpJTCB3RX19LNLhA="
+      "Stereo Transmission.pdb": "sha256-mCUHb+v8O8kWWOwlM5QfEhOt3Ykwn9PLvWw6z4EiwlE="
     }
   },
   "cacheBootResources": true,
