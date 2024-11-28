@@ -14,12 +14,13 @@
 .scroll-container {
     height: 100vh;
     overflow-y: scroll;
-    scroll-snap-type: y mandatory;
+    scroll-snap-type: y proximity;
 }
 
 .content {
     text-align: center;
     width: 100%;
+    
 }
 
 .page {
@@ -27,10 +28,11 @@
     scroll-snap-align: start;
 }
 
-.divider-horizontal {
-    width: 50%;
+.divider-horizontal, hr {
+    width: 75%;
     margin: 0 auto;
-    border-top: 3px solid rgb(255,255,255) 1;
+    color: white;
+    height: 2px;
 }
 
 .divider-vertical {
@@ -56,10 +58,10 @@
 }
 
 .spotify-aboutus {
-    background-color: #333;
+    background-color: #444;
 }
 
-.contactus {
+.upcomingshows {
     background: url("../img/contactus-background.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
        -moz-background-size: cover;

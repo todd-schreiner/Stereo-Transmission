@@ -1,18 +1,71 @@
+@using System.Net.Mail
+@inject IJSRuntime JS
+
 @page "/welcome"
 
 <div class="page welcome">
     <div class="content">
         <div class="header">Stereo Transmission</div>
-        <hr class="divider-horizontal">
+        <hr style="width: 75%; color: white; height: 2px; margin: 0 auto;">
         <div class="social-links">
-            <a href="https://open.spotify.com/artist/1LMbmG2goXx9bY2xMD87OW?si=zFg-bp6XQtmWBUJBjxOr7Q" target="_blank" rel="noopener noreferrer"><img class="welcome-img-logo" src="img/spotify.png" alt="Spotify"></a>
+            <a href="https://open.spotify.com/artist/1LMbmG2goXx9bY2xMD87OW?si=zFg-bp6XQtmWBUJBjxOr7Q" target="_blank" rel="noopener noreferrer"><img class="welcome-img-logo" src="img/spotify-white.png" alt="Spotify"></a>
             <div class="dot"></div>
-            <a href="https://www.instagram.com/stereotransmission/" target="_blank" rel="noopener noreferrer"><img class="welcome-img-logo" src="img/Instagram.png" alt="Instagram"></a>
+            <a href="https://www.instagram.com/stereotransmission/" target="_blank" rel="noopener noreferrer"><img class="welcome-img-logo" src="img/instagram-white.png" alt="Instagram"></a>
             <div class="dot"></div>
-            <a href="https://stereotransmission.bandcamp.com/" target="_blank" rel="noopener noreferrer"><img class="welcome-img-logo" src="img/bandcamp.png" alt="Bandcamp"></a>
+            <a href="https://www.youtube.com/channel/UCus6w_O3zfcZjCzrvRwCwfw" target="_blank" rel="noopener noreferrer"><img class="welcome-img-logo" src="img/youtube-white.png" alt="Bandcamp"></a>
         </div>
     </div>
+
+    @*<div class="signup-container">
+        <input @bind="email" class="signup-input" placeholder="Enter Email!" />
+        <button class="signup-button" @onclick="SendEmail">Sign Up!</button>
+        @if (message != null)
+        {
+            <p>@message</p>
+        }
+    </div>*@
 </div>
+
+@code {
+    private string email = string.Empty;
+    private string? message;
+
+    private async Task SendEmail()
+    {
+        if (string.IsNullOrWhiteSpace(email) || !email.Contains("@"))
+        {
+            message = "Please enter a valid email address.";
+            return;
+        }
+
+        try
+        {
+            // Replace this with your actual email-sending logic
+            var smtpClient = new SmtpClient("smtp.your-email-provider.com")
+            {
+                Port = 587,
+                Credentials = new System.Net.NetworkCredential("your-email@example.com", "your-password"),
+                EnableSsl = true,
+            };
+
+            var mailMessage = new MailMessage
+            {
+                From = new MailAddress("your-email@example.com"),
+                Subject = "New Signup",
+                Body = $"A user signed up with the email: {email}",
+                IsBodyHtml = true,
+            };
+            mailMessage.To.Add("ToddSchre@gmail.com");
+
+            await smtpClient.SendMailAsync(mailMessage);
+            message = "Signup successful!";
+        }
+        catch (Exception ex)
+        {
+            message = $"Failed to send email: {ex.Message}";
+        }
+    }
+}
 
 <style>
     .header {
@@ -22,11 +75,13 @@
         padding-top: 2%;
         text-shadow: 2px 2px 4px #000;
         color: rgb(255, 255, 255);
+        top: 0;
     }
 
     .social-links {
+        padding-top: 2rem;
         text-align: center;
-        text-shadow: 1px 1px 2px #000;
+        filter: drop-shadow(0 -0.5rem 0.75rem #000);
     }
 
     .dot {
@@ -34,12 +89,51 @@
         width: .75rem;
         margin-left: .5rem;
         margin-right: .5rem;
-        background-color: #000;
+        background-color: #ccc;
         border-radius: 50%;
         display: inline-block;
     }
 
     .welcome-img-logo {
-        width: 7rem;
+        width: 2rem;
+    }
+
+    .signup-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-left: 8rem;
+        padding-right: 8rem;
+        border-radius: 25px;
+    }
+
+    .signup-input, .signup-button {
+        padding: 10px 15px;
+        border: 1px solid #ccc;
+        border-radius: 25px;
+        font-size: 16px;
+        margin: 0;
+        outline: none;
+    }
+
+    .signup-input {
+        flex: 1;
+        border-right: none;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    .signup-button {
+        background-color: #000;
+        color: white;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .signup-button:hover {
+        background-color: white;
+        color: #000;
     }
 </style>
